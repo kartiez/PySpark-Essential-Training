@@ -41,6 +41,7 @@ df = spark.read.csv('reported-crimes.csv',header=True)
 # Some basic function on the Dataframe in Pyspark
 
 df.show(5) //Shows top 5 rows
+
 df.printSchema() // Prints the Schema of the Dataframe
 df.columns //Shows the column names
 df.head(5) //Shows top 5 rows as a list
