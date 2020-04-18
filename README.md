@@ -10,14 +10,9 @@ Handling datasets/dataframes in PySpark
 !wget -q http://archive.apache.org/dist/spark/spark-2.3.1/spark-2.3.1-bin-hadoop2.7.tgz
 !tar xf spark-2.3.1-bin-hadoop2.7.tgz
 !pip install -q findspark
-
 ---------------------------------------------------
----------------------------------------------------
-
 # Start Spark Sesison
 // Run these codes in google Colab to setup a new Spark Session.
-
-
 import os
 os.environ["JAVA_HOME"] = "/usr/lib/jvm/java-8-openjdk-amd64"
 os.environ["SPARK_HOME"] = "/content/spark-2.3.1-bin-hadoop2.7"
@@ -31,22 +26,17 @@ import pyspark
 from pyspark.sql import SparkSession
 spark = SparkSession.builder.getOrCreate() 
 spark
-
 --------------------------------------------------
---------------------------------------------------
-
 # Download a Dataset into Spark
 
 !wget https://data.cityofchicago.org/api/views/ijzp-q8t2/rows.csv?accessType=DOWNLOAD
 //Here I am using Chicago Crime Dataset (1.5GB)
 
 --------------------------------------------------
---------------------------------------------------
 # Create a Dataframe using the downloaded Data
 
 df = spark.read.csv('reported-crimes.csv',header=True)
 
----------------------------------------------------
 ---------------------------------------------------
 # Some basic function on the Dataframe in Pyspark
 
@@ -56,7 +46,6 @@ df.columns //Shows the column names
 df.head(5) //Shows top 5 rows as a list
 df.select(['ID','Date']).show(5) //select few columns
 
------------------------------------------------------
 ----------------------------------------------------
 # Advanced function on Dataframe
 
