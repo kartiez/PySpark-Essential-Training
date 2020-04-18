@@ -14,7 +14,7 @@ Handling datasets/dataframes in PySpark
 ---------------------------------------------------
 ---------------------------------------------------
 
-#Start Spark Sesison
+# Start Spark Sesison
 // Run these codes in google Colab to setup a new Spark Session.
 
 
@@ -35,14 +35,14 @@ spark
 --------------------------------------------------
 --------------------------------------------------
 
-#Download a Dataset into Spark
+# Download a Dataset into Spark
 
 !wget https://data.cityofchicago.org/api/views/ijzp-q8t2/rows.csv?accessType=DOWNLOAD
 //Here I am using Chicago Crime Dataset (1.5GB)
 
 --------------------------------------------------
 --------------------------------------------------
-#Creat a Dataframe using the downloaded Data
+# Create a Dataframe using the downloaded Data
 
 df = spark.read.csv('reported-crimes.csv',header=True)
 
@@ -58,7 +58,7 @@ df.select(['ID','Date']).show(5) //select few columns
 
 -----------------------------------------------------
 ----------------------------------------------------
-#Advanced function on Dataframe
+# Advanced function on Dataframe
 
 df.groupBy('Location Description').count().orderBy('count',ascending=False).show(3) //Top 3 Locations by cases reported.
 
