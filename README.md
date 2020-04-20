@@ -62,7 +62,7 @@ df = spark.read.csv('reported-crimes.csv',header=True)
 
 ---------------------------------------------------
 
-# Some basic function on the Dataframe in Pyspark
+# Some basic operations on the Dataframe in Pyspark
 
 
 df.show(5) //Shows top 5 rows
@@ -78,7 +78,7 @@ df.select(['ID','Date']).show(5) //select few columns
 
 
 ----------------------------------------------------
-# Advanced function on Dataframe
+# Advanced operation on Dataframe
 
 df.groupBy('Location Description').count().orderBy('count',ascending=False).show(3) //Top 3 Locations by cases reported.
 
