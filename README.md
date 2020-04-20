@@ -92,6 +92,20 @@ OUTPUT
 |           APARTMENT| 698159|
 +--------------------+-------+
 
+# Pyspark Function
+
+from pyspark.sql.functions import min, max, date_add, upper, lower, substring //import the function you need here
+
+df.select(upper(col('Location Description'))).show(2) //Convert to upper case
+
+df.select(lower(col('Location Description'))).show(2) //Convert to Lower case
+
+df.select(substring(col('Location Description'),1,5)).show(2) //Extract a substring
+
+df.select(max(col('Date'))).show(1) //Select Max of date
+
+df.select(date_add(max(col('Date')),3)).show(1) //Add date 
+
 # Joins
 
 Read another dataset to join:
