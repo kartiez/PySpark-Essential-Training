@@ -101,13 +101,15 @@ Read another dataset to join:
 ps = spark.read.csv('police.csv',header=True)
 
 
-Padding >
+Padding (make two columns similiar) >
 
 from pyspark.sql.functions import lpad
 
 ps = ps.withColumn('Padded_ID',lpad(col('DISTRICT'),3,'0'))
 
 ps.show(5)
+
+<< Joining >>
 
 df.join(ps, df.District == ps.Padded_ID, 'left_outer').show(5)
 
