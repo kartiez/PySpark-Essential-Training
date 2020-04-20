@@ -60,3 +60,18 @@ OUTPUT
 |           RESIDENCE|1144628|
 |           APARTMENT| 698159|
 +--------------------+-------+
+
+# Joins
+
+Read another dataset to join:
+!wget https://data.cityofchicago.org/api/views/z8bn-74gv/rows.csv?accessType=DOWNLOAD
+ps = spark.read.csv('police.csv',header=True)
+
+Padding >
+from pyspark.sql.functions import lpad
+ps = ps.withColumn('Padded_ID',lpad(col('DISTRICT'),3,'0'))
+ps.show(5)
+
+df.join(ps, df.District == ps.Padded_ID, 'left_outer').show(5)
+
+//Completed
