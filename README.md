@@ -1,4 +1,4 @@
-# PySpark-Essential-Training Google COLABS
+# PySpark with Google COLABS
 Handling datasets/dataframes in PySpark
 
 ----------------------------------------------------
