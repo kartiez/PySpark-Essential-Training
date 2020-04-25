@@ -3,7 +3,7 @@ Handling datasets/dataframes in PySpark
 
 ----------------------------------------------------
 ## Download Spark Files and Install PySpark 
-// Run these codes in google Colab
+Run these codes in google Colab
 ```
 !apt-get update
 
@@ -18,7 +18,7 @@ Handling datasets/dataframes in PySpark
 ---------------------------------------------------
 ## Start Spark Sesison
 
-// Run these codes in google Colab to setup a new Spark Session.
+Run these codes in google Colab to setup a new Spark Session.
 ```
 import os
 
@@ -50,7 +50,7 @@ spark
 ```
 !wget https://data.cityofchicago.org/api/views/ijzp-q8t2/rows.csv?accessType=DOWNLOAD
 ```
-//Here I am using Chicago Crime Dataset (1.5GB)
+Here I am using Chicago Crime Dataset (1.5GB)
 
 
 --------------------------------------------------
@@ -80,8 +80,10 @@ df.select(['ID','Date']).show(5) //select few columns
 
 ----------------------------------------------------
 ## Advanced operation on Dataframe
+
+Top 3 Locations by cases reported
 ```
-df.groupBy('Location Description').count().orderBy('count',ascending=False).show(3) //Top 3 Locations by cases reported.
+df.groupBy('Location Description').count().orderBy('count',ascending=False).show(3)
 ```
 
 OUTPUT 
