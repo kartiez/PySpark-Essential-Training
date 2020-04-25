@@ -2,7 +2,7 @@
 Handling datasets/dataframes in PySpark
 
 ----------------------------------------------------
-# Download Spark Files and Install PySpark 
+## Download Spark Files and Install PySpark 
 // Run these codes in google Colab
 
 !apt-get update
@@ -16,7 +16,7 @@ Handling datasets/dataframes in PySpark
 !pip install -q findspark
 
 ---------------------------------------------------
-# Start Spark Sesison
+## Start Spark Sesison
 
 // Run these codes in google Colab to setup a new Spark Session.
 import os
@@ -45,7 +45,7 @@ spark
 
 --------------------------------------------------
 
-# Download a Dataset into Spark
+## Download a Dataset into Spark
 
 !wget https://data.cityofchicago.org/api/views/ijzp-q8t2/rows.csv?accessType=DOWNLOAD
 
@@ -54,7 +54,7 @@ spark
 
 --------------------------------------------------
 
-# Create a Dataframe using the downloaded Data
+## Create a Dataframe using the downloaded Data
 
 
 df = spark.read.csv('reported-crimes.csv',header=True)
@@ -62,7 +62,7 @@ df = spark.read.csv('reported-crimes.csv',header=True)
 
 ---------------------------------------------------
 
-# Some basic operations on the Dataframe in Pyspark
+## Some basic operations on the Dataframe in Pyspark
 
 
 df.show(5) //Shows top 5 rows
@@ -78,7 +78,7 @@ df.select(['ID','Date']).show(5) //select few columns
 
 
 ----------------------------------------------------
-# Advanced operation on Dataframe
+## Advanced operation on Dataframe
 
 df.groupBy('Location Description').count().orderBy('count',ascending=False).show(3) //Top 3 Locations by cases reported.
 
@@ -92,7 +92,7 @@ OUTPUT
 |           APARTMENT| 698159|
 +--------------------+-------+
 
-# Pyspark Function
+## Pyspark Function
 
 from pyspark.sql.functions import min, max, date_add, upper, lower, substring //import the function you need here
 
@@ -106,7 +106,7 @@ df.select(max(col('Date'))).show(1) //Select Max of date
 
 df.select(date_add(max(col('Date')),3)).show(1) //Add date 
 
-# Joins
+## Joins
 
 Read another dataset to join:
 
@@ -127,4 +127,4 @@ ps.show(5)
 
 df.join(ps, df.District == ps.Padded_ID, 'left_outer').show(5)
 
-//Completed
+### Completed
