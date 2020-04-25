@@ -84,6 +84,7 @@ df.groupBy('Location Description').count().orderBy('count',ascending=False).show
 
 
 OUTPUT 
+```
 +--------------------+-------+
 |Location Description|  count|
 +--------------------+-------+
@@ -91,7 +92,7 @@ OUTPUT
 |           RESIDENCE|1144628|
 |           APARTMENT| 698159|
 +--------------------+-------+
-
+```
 ## Pyspark Function
 
 from pyspark.sql.functions import min, max, date_add, upper, lower, substring //import the function you need here
